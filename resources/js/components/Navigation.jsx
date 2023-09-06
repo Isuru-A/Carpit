@@ -4,7 +4,10 @@ const Navigation = () => {
 
     return (
         <nav className="navigation">
-            <NavLink to="test">Resr</NavLink>
+            <NavLink to="home">Home</NavLink>
+            <NavLink to="services">Services</NavLink>
+            <NavLink to="about">About Us</NavLink>
+            <NavLink to="enquire">Enquire Now</NavLink>
         </nav>
     )
 }

@@ -5,17 +5,13 @@ const NavLink = ({to, children}) => {
 
     const variants = {
         active: {
-            backgroundColor: "#6951FF",
-            opacity: ".4",
-            paddingLeft: "1.5rem",
-            marginLeft: "2rem",
-            color: "#ECF0F3",
+            backgroundColor: "transparent",
+            color: "#DD6D1D",
+            paddingBottom: "0.25rem",
+            // borderBottom: "solid 1px #DD6D1D"
         },
         inactive: {
             backgroundColor: "transparent",
-            paddingLeft: 0,
-            marginLeft: 0,
-            opacity: 1,
             color: "#D9D9D9",
         }
     }

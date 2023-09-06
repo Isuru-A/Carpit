@@ -1,5 +1,13 @@
-.nav-link {
-    font-size: 1rem;
-    color: $font-main !important;
-    text-decoration: none;
+.navigation {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    width: max-content;
+    .nav-link {
+        font-size: 1rem;
+        color: $font-main !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .25rem;
+    }
 }
