@@ -1,7 +1,7 @@
 import {NavLink as ReactNavLink} from "react-router-dom";
 import {motion} from "framer-motion";
 
-const NavLink = ({to, children}) => {
+const NavLink = ({id, to, children}) => {
 
     const variants = {
         active: {
@@ -17,7 +17,7 @@ const NavLink = ({to, children}) => {
     }
 
     return (
-        <ReactNavLink className="nav-link" to={to}>
+        <ReactNavLink className="nav-link" to={to} id={id}>
             {({isActive}) => (
                 <motion.span
                     className="nav-link-active"
