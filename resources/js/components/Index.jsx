@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Navigation from "./Navigation.jsx";
 import {BrowserRouter} from "react-router-dom";
+import Header from "./Header.jsx";
 
 function Index() {
     return (
         <div className="app">
             <BrowserRouter>
-                <Navigation/>
+                <Header/>
             </BrowserRouter>
         </div>
     );
