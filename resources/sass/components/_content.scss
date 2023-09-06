@@ -1,0 +1,18 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    .content-container {
+        height: 100vh;
+        background-color: $font-main;
+
+        img {
+            padding: 3vh 2vw;
+            height: 10rem;
+            z-index: 5;
+        }
+
+        .content {
+            height: max-content;
+        }
+    }
+}

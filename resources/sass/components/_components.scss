@@ -1,5 +1,6 @@
 @import "nagivation";
 @import "header";
+@import "content";
 
 .content-outlet {
     height: 100vh;
@@ -9,20 +10,3 @@
     background-color: $font-main;
 }
 
-.content-container {
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    background-color: $font-main;
-
-    img {
-        padding: 3vh 2vw;
-        height: 10rem;
-        z-index: 5;
-    }
-
-    .content {
-        background-color: #2d3748;
-        height: max-content;
-    }
-}
