@@ -28,3 +28,16 @@
         letter-spacing: .25rem;
     }
 }
+
+.service-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    a {
+        text-decoration: none;
+        color: $font-dark;
+        font-size: 1.2rem;
+        font-weight: lighter;
+    }
+}

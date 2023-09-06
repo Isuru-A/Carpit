@@ -13,6 +13,13 @@
 
         .content {
             height: max-content;
+            padding-left: 3.5vw;
+            h1 {
+                font-weight: normal;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                letter-spacing: .5rem;
+            }
         }
     }
 }
