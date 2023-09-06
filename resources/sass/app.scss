@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+//@import 'bootstrap/scss/bootstrap';
+
+// Elements
+@import "elements/elements";
+
+// Components
+@import "components/components";
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $font-family-sans-serif;
+
+    font-size: 16px;
+    @media (max-width: 1920px) {
+        font-size: 14px;
+    }
+    @media (max-width: 1280px) {
+        font-size: 10px;
+    }
+    @media (max-width: 640px) {
+        font-size: 8px;
+    }
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../../public/assets/bg.jpg");
+    background-size: cover;
+}
