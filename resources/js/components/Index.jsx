@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom";
 import Header from "./Header.jsx";
+import Router from "./Router.jsx";
 
 function Index() {
     return (
         <div className="app">
             <BrowserRouter>
                 <Header/>
+                <Router/>
             </BrowserRouter>
         </div>
     );
@@ -21,6 +23,7 @@ if (document.getElementById('root')) {
     App.render(
         <React.StrictMode>
             <Index/>
+
         </React.StrictMode>
     )
 }

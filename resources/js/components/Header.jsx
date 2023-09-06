@@ -8,7 +8,7 @@ const Header = () => {
         <div id="header">
             <img src={logo} alt="CARPIT"/>
             <Routes>
-                <Route path="/" element={<Navigation/>}/>
+                <Route exact path="/" element={<Navigation/>}/>
             </Routes>
         </div>
     )

@@ -1,2 +1,10 @@
 @import "nagivation";
 @import "header";
+
+.content-outlet {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    min-width: min-content;
+    background-color: $font-main;
+}
