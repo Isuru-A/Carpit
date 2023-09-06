@@ -8,3 +8,10 @@
     min-width: min-content;
     background-color: $font-main;
 }
+
+.content-container {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: $font-main;
+}
