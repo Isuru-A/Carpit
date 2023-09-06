@@ -1,4 +1,5 @@
 import {motion} from "framer-motion";
+import logo from "../../../public/assets/logo.png";
 
 const ContentContainer = ({width, children}) => {
 
@@ -7,6 +8,7 @@ const ContentContainer = ({width, children}) => {
                     initial={{width: 0}}
                     animate={{width: `${width}vw`}}
         >
+            <img src={logo} alt="CARPIT"/>
             <div className="content">
                 {children}
             </div>
