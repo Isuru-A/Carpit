@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 
-const FadeIn = ({id, className, children}) => {
+const FadeInDiv = ({id, className, children}) => {
 
     return (
         <motion.div
@@ -14,4 +14,4 @@ const FadeIn = ({id, className, children}) => {
     )
 }
 
-export default FadeIn
+export default FadeInDiv
