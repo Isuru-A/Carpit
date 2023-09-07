@@ -41,3 +41,18 @@
         font-weight: lighter;
     }
 }
+
+.service-navigation-inline {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    margin-top: 1rem;
+    a {
+        color: $font-dark;
+        text-decoration: none;
+    }
+
+    .active {
+        color: rgba($font-dark, .5);
+    }
+}
