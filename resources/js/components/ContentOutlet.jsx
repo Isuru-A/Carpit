@@ -12,14 +12,11 @@ const ContentOutlet = () => {
         <div className="content-wrapper">
             <motion.div className="content-container"
                         layout
-                        initial={{width: 0}}
-                        animate={{width: `auto`}}
-                        exit={{width: 0}}
             >
                 <img src={logo} alt="CARPIT"/>
-                <div className="content">
+                <motion.div className="content">
                     <Outlet/>
-                </div>
+                </motion.div>
                 <InLineButton id="content-close" onClick={() => {
                     navigate('/')
                 }}>Close</InLineButton>
