@@ -1,6 +1,8 @@
 @import "nagivation";
 @import "header";
 @import "content";
+@import "About/about";
+@import "Services/services";
 
 .content-outlet {
     height: 100vh;

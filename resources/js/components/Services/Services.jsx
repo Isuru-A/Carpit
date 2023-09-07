@@ -1,10 +1,9 @@
-import ContentContainer from "../ContentContainer.jsx";
 import {NavLink} from "react-router-dom";
 
 const Services = () => {
 
     return (
-        <ContentContainer width={20}>
+        <div id="content-service-select">
             <h1>Services</h1>
             <nav className="service-navigation">
                 <NavLink to="/services/servicing">Servicing</NavLink>
@@ -13,7 +12,7 @@ const Services = () => {
                 <NavLink to="/services/detailing" id="enquire-now">Detailing</NavLink>
                 <NavLink to="/services/tuning" id="enquire-now">Tuning</NavLink>
             </nav>
-        </ContentContainer>
+        </div>
     )
 }
 
