@@ -1,9 +1,9 @@
-import FadeIn from "../../elements/FadeIn.jsx";
+import FadeInDiv from "../../elements/FadeInDiv.jsx";
 
 const About = () => {
 
     return (
-        <FadeIn id="about">
+        <FadeInDiv id="about">
             <h1>About Us</h1>
             <p>At CARPIT Automotive, we believe that your car is more than just a means of transportation. It's a part of who you are, and we take pride in taking care of it as if it were our own.
                 We know that your time is valuable, so we offer fast, friendly service at a fair price.
@@ -24,7 +24,7 @@ const About = () => {
                     <li>A satisfaction guarantee</li>
                 </ul>
             </p>
-        </FadeIn>
+        </FadeInDiv>
     )
 }
 
