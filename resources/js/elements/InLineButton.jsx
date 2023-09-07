@@ -1,9 +1,11 @@
+import {motion} from "framer-motion";
+
 const InLineButton = ({id, onClick, children}) => {
 
     return (
-        <span id={id} className="button button-in-line" onClick={onClick}>
+        <motion.span layout id={id} className="button button-in-line" onClick={onClick}>
             {children}
-        </span>
+        </motion.span>
     )
 }
 

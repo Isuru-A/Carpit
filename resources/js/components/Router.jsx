@@ -4,6 +4,7 @@ import Header from "./Header.jsx";
 import Servicing from "./Services/Servicing.jsx";
 import Services from "./Services/Services.jsx";
 import ContentOutlet from "./ContentOutlet.jsx";
+import About from "./About/About.jsx";
 
 const Router = () => {
 
@@ -14,8 +15,11 @@ const Router = () => {
                     <Header/>
                 </>}/>
                 <Route path={'/'} element={<ContentOutlet/>}>
+                    {/*Services*/}
                     <Route exact path={'/services'} element={<Services/>}/>
                     <Route path={'/services/servicing'} element={<Servicing/>}/>
+
+                    <Route path={'/about'} element={<About/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>

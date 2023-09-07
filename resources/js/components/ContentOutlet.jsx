@@ -12,9 +12,19 @@ const ContentOutlet = () => {
         <div className="content-wrapper">
             <motion.div className="content-container"
                         layout
+                        key={"content-container"}
+                        initial={{width: 0}}
+                        animate={{width: `auto`}}
+                        exit={{width: 0}}
             >
-                <img src={logo} alt="CARPIT"/>
-                <motion.div className="content">
+                <motion.img layout src={logo} alt="CARPIT"/>
+                <motion.div
+                    className="content"
+                    layout
+                    layoutRoot
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                >
                     <Outlet/>
                 </motion.div>
                 <InLineButton id="content-close" onClick={() => {
