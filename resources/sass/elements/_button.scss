@@ -5,3 +5,12 @@
 .button-in-line {
     color: $font-dark;
 }
+
+.button-default {
+    color: $font-main;
+    padding: .5rem 1rem;
+    background-color: $splash;
+    width: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+}
