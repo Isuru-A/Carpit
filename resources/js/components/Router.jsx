@@ -9,6 +9,7 @@ import Transmission from "./Services/Transmission.jsx";
 import Cleaning from "./Services/Cleaning.jsx";
 import Detailing from "./Services/Detailing.jsx";
 import Tuning from "./Services/Tuning.jsx";
+import Hero from "./Hero.jsx";
 
 const Router = () => {
 
@@ -17,6 +18,7 @@ const Router = () => {
             <Routes>
                 <Route exact path={'/'} element={<>
                     <Header/>
+                    <Hero/>
                 </>}/>
                 <Route path={'/'} element={<ContentOutlet/>}>
                     {/*Services*/}
