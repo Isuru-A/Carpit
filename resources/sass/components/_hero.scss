@@ -1,0 +1,27 @@
+.hero {
+    position: absolute;
+    background-color: $red;
+    width: 25vw;
+    height: 15vh;
+    right: 0;
+    top: 25vh;
+    padding: 1.5rem 2rem;
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        font-weight: lighter;
+        font-size: 2rem;
+        color: $font-main;
+        line-height: 3rem;
+    }
+    #hero-enquire {
+        position: absolute;
+        color: $splash !important;
+        background-color: $font-main !important;
+        bottom: 2rem;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
