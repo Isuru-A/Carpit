@@ -22,6 +22,7 @@ const Router = () => {
                 </>}/>
                 <Route path={'/'} element={<ContentOutlet/>}>
                     {/*Services*/}
+
                     <Route exact path={'/services'} element={<Services/>}/>
                     <Route path={'/services/servicing'} element={<Servicing/>}/>
                     <Route path={'/services/transmission'} element={<Transmission/>}/>
