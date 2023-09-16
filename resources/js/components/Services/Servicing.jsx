@@ -1,9 +1,11 @@
+import Service from "./Service.jsx";
+
 const Servicing = () => {
 
     return (
-        <div className="content-service">
-            <h1>Services / <span className="splash">Servicing</span></h1>
-        </div>
+        <Service name="Servicing">
+
+        </Service>
     )
 }
 

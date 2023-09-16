@@ -4,6 +4,9 @@
     .content-container {
         height: 100vh;
         background-color: $font-main;
+        box-shadow: 29px -21px 23px -25px rgba(0,0,0,0.44);
+        -webkit-box-shadow: 29px -21px 23px -25px rgba(0,0,0,0.44);
+        -moz-box-shadow: 29px -21px 23px -25px rgba(0,0,0,0.44);
 
         img {
             padding: 3vh 2vw;
