@@ -9,7 +9,7 @@ import world from "../../../scripts/helpers/world.js";
 const EnquireFormName = ({advance, setDetails}) => {
 
     return (
-        <FadeInDiv id="enquire">
+        <FadeInDiv className="enquire">
             <Formik initialValues={{
                 name: '',
                 email: '',

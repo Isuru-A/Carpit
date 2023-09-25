@@ -1,9 +1,10 @@
 import {useState} from "react";
 import EnquireFormName from "./EnquireFormName";
+import EnquireFormEnquiry from "./EnquireFormEnquiry";
 
 const EnquireForm = () => {
 
-    const [state, setState] = useState(0)
+    const [state, setState] = useState(1)
     const [details, setDetails] = useState({})
 
     function advance() {
@@ -11,7 +12,8 @@ const EnquireForm = () => {
     }
 
     const views = {
-        0: <EnquireFormName advance={advance} setDetails={setDetails}/>
+        0: <EnquireFormName advance={advance} setDetails={setDetails}/>,
+        1: <EnquireFormEnquiry setDetails={setDetails}/>
     }
 
     return (

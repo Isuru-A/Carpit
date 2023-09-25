@@ -1,4 +1,4 @@
-#enquire {
+.enquire {
     width: 25vw;
 
     form {
@@ -12,6 +12,10 @@
             #phone_country {
                 text-overflow: ellipsis;
             }
+        }
+
+        #enquiry {
+            height: 20vh;
         }
     }
 }
