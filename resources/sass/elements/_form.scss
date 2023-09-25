@@ -43,6 +43,10 @@
                 color: $font-dark;
             }
 
+            textarea {
+                resize: none;
+            }
+
             select {
                 width: 100% !important;
                 padding: calc(1rem - .5px) !important;
