@@ -10,6 +10,7 @@ import Cleaning from "./Services/Cleaning.jsx";
 import Detailing from "./Services/Detailing.jsx";
 import Tuning from "./Services/Tuning.jsx";
 import Hero from "./Hero.jsx";
+import Enquire from "./Enquire/Enquire.jsx";
 
 const Router = () => {
 
@@ -31,6 +32,7 @@ const Router = () => {
                     <Route path={'/services/tuning'} element={<Tuning/>}/>
 
                     <Route path={'/about'} element={<About/>}/>
+                    <Route path={'/enquire'} element={<Enquire/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>
