@@ -28,6 +28,7 @@ class EnquiryController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc,dns',
             'phone' => 'required|min:4|max:15',
+            'service' => 'required',
             'enquiry' => 'required|min:100'
         ]);
 
@@ -43,9 +44,7 @@ class EnquiryController extends Controller
         } catch (Exception $e) {
             return new JsonResponse([
                 'success' => false,
-                'errors' => [
-                    'enquiry' => 'Failed to create enquiry'
-                ]
+                'errors' => $e
             ], 400);
         }
 

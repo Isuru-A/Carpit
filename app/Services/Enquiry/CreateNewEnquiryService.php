@@ -31,6 +31,7 @@ class CreateNewEnquiryService
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
+            'service' => 'required',
             'enquiry' => 'required'
         ]);
 
