@@ -18,6 +18,9 @@ const EnquireFormEnquiry = ({setDetails, details}) => {
                     ...details,
                     ...values
                 })
+                    .then(response => {
+                        //TODO Update UI to show enquiry was sent
+                    })
             }}>
                 {({errors}) => (
                     <Form id="enquire-enquiry" cta="Submit">
