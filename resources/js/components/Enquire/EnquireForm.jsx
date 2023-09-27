@@ -4,7 +4,7 @@ import EnquireFormEnquiry from "./EnquireFormEnquiry";
 
 const EnquireForm = () => {
 
-    const [state, setState] = useState(1)
+    const [state, setState] = useState(0)
     const [details, setDetails] = useState({})
 
     function advance() {
@@ -13,7 +13,7 @@ const EnquireForm = () => {
 
     const views = {
         0: <EnquireFormName advance={advance} setDetails={setDetails}/>,
-        1: <EnquireFormEnquiry setDetails={setDetails}/>
+        1: <EnquireFormEnquiry setDetails={setDetails} details={details}/>
     }
 
     return (
