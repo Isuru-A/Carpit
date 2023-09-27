@@ -4,16 +4,20 @@ import Form from "../../elements/Form.jsx";
 import Select from "../../elements/Select.jsx";
 import TextArea from "../../elements/TextArea.jsx";
 import validate from "../../../scripts/validate.js";
+import axios from "axios";
 
-const EnquireFormEnquiry = ({setDetails}) => {
+const EnquireFormEnquiry = ({setDetails, details}) => {
 
     return (
         <FadeInDiv className="enquire">
             <Formik initialValues={{
                 service: 'Servicing',
                 enquiry: ''
-            }} onSubmit={() => {
-
+            }} onSubmit={async (values) => {
+                await axios.post('/enquire', {
+                    ...details,
+                    ...values
+                })
             }}>
                 {({errors}) => (
                     <Form id="enquire-enquiry" cta="Submit">
