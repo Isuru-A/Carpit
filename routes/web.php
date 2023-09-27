@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('{any}', function () {
     return view('app');
 });
+
+Route::post('/enquire', [\App\Http\Controllers\EnquiryController::class, 'create']);
