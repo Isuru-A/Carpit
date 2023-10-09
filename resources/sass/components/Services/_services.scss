@@ -10,4 +10,13 @@
     h1 {
         margin-bottom: 0 !important;
     }
+    p {
+        color: $font-dark;
+        margin-top: 2rem;
+    }
+    ul {
+        li {
+            margin: .25rem 0;
+        }
+    }
 }
