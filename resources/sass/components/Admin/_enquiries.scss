@@ -16,4 +16,42 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .enquiry {
+        padding: 2.25vh 0 ;
+        border-bottom: solid 2px rgba($font-dark, .25);
+        width: 100%;
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 2fr 2.5fr;
+        .enquiry-user {
+            padding-left: 1.25rem;
+            display: flex;
+            flex-direction: row;
+            .enquiry-service {
+                padding-right: 1rem;
+                padding-top: .15rem;
+                padding-bottom: .15rem;
+                border-right: solid 1px $splash;
+                font-weight: lighter;
+            }
+            .enquiry-user-name {
+                padding-left: 1rem;
+                padding-top: .15rem;
+                padding-bottom: .15rem;
+                font-weight: lighter;
+            }
+        }
+        .enquiry-enquiry {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-height: 1rem;
+            color: rgba($font-dark, .5);
+            padding-right: 1.25rem;
+            padding-top: .15rem;
+            padding-bottom: .15rem;
+            font-weight: lighter;
+        }
+    }
 }
