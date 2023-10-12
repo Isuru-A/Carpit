@@ -1,5 +1,5 @@
 #admin-outlet {
-    background-color: $body-bg;
+    background-color: $font-main;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -10,7 +10,7 @@
         letter-spacing: .5rem;
         width: 100%;
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
     .navigation {
@@ -20,3 +20,5 @@
         margin-top: 1rem;
     }
 }
+
+@import "enquiries";
