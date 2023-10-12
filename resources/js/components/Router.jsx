@@ -11,6 +11,7 @@ import Detailing from "./Services/Detailing.jsx";
 import Tuning from "./Services/Tuning.jsx";
 import Hero from "./Hero.jsx";
 import Enquire from "./Enquire/Enquire.jsx";
+import AdminOutlet from "./Admin/AdminOutlet.jsx";
 
 const Router = () => {
 
@@ -33,6 +34,10 @@ const Router = () => {
 
                     <Route path={'/about'} element={<About/>}/>
                     <Route path={'/enquire'} element={<Enquire/>}/>
+                </Route>
+
+                <Route path={"/admin"} element={<AdminOutlet/>}>
+
                 </Route>
             </Routes>
         </AnimatePresence>

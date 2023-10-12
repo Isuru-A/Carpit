@@ -1,7 +1,7 @@
 import {NavLink as ReactNavLink} from "react-router-dom";
 import {motion} from "framer-motion";
 
-const NavLink = ({id, to, children}) => {
+const NavLink = ({id, to, inverted=false, children}) => {
 
     const variants = {
         active: {
@@ -12,7 +12,7 @@ const NavLink = ({id, to, children}) => {
         },
         inactive: {
             backgroundColor: "transparent",
-            color: "#D9D9D9",
+            color: inverted ? "#333344" : "#D9D9D9",
         }
     }
 

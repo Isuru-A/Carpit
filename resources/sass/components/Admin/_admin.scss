@@ -1,0 +1,22 @@
+#admin-outlet {
+    background-color: $body-bg;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    h1 {
+        font-size: 2rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .navigation {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
