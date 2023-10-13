@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/enquire', [\App\Http\Controllers\EnquiryController::class, 'create']);
+
 Route::any('{all}', function () {
     return view('app');
 })
     ->where(['all' => '.*']);
 
-Route::post('/enquire', [\App\Http\Controllers\EnquiryController::class, 'create']);

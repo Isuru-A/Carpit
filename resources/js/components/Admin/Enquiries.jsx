@@ -13,6 +13,7 @@ const Enquiries = () => {
             .then(response => {
                 setEnquiries(response.data)
             })
+        // TODO Add loader and async
     }, [])
 
     return (

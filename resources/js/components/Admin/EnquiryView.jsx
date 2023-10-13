@@ -15,6 +15,7 @@ const EnquiryView = () => {
                 console.log(response.data)
                 setEnquiry(response.data)
             })
+        // TODO Add loader and async
     }, [])
 
     return (
