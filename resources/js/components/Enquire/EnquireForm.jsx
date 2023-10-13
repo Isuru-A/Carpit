@@ -1,6 +1,7 @@
 import {useState} from "react";
 import EnquireFormName from "./EnquireFormName";
 import EnquireFormEnquiry from "./EnquireFormEnquiry";
+import EnquirySent from "./EnquirySent.jsx";
 
 const EnquireForm = () => {
 
@@ -13,11 +14,15 @@ const EnquireForm = () => {
 
     const views = {
         0: <EnquireFormName advance={advance} setDetails={setDetails}/>,
-        1: <EnquireFormEnquiry setDetails={setDetails} details={details}/>
+        1: <EnquireFormEnquiry setDetails={setDetails} details={details} advance={advance}/>,
+        2: <EnquirySent/>
     }
 
     return (
-        views[state]
+        <>
+            <h1 id="enquire-heading">Enquire Now</h1>
+            {views[state]}
+        </>
     )
 }
 

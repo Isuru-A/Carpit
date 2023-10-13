@@ -6,7 +6,7 @@ import TextArea from "../../elements/TextArea.jsx";
 import validate from "../../../scripts/validate.js";
 import axios from "axios";
 
-const EnquireFormEnquiry = ({setDetails, details}) => {
+const EnquireFormEnquiry = ({setDetails, details, advance}) => {
 
     return (
         <FadeInDiv className="enquire">
@@ -19,7 +19,7 @@ const EnquireFormEnquiry = ({setDetails, details}) => {
                     ...values
                 })
                     .then(response => {
-                        //TODO Update UI to show enquiry was sent
+                        advance()
                     })
             }}>
                 {({errors}) => (
