@@ -4,6 +4,9 @@
 
 .button-in-line {
     color: $font-dark;
+    &:hover {
+        opacity: .5;
+    }
 }
 
 .button-default {

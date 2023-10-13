@@ -13,6 +13,9 @@ import Hero from "./Hero.jsx";
 import Enquire from "./Enquire/Enquire.jsx";
 import AdminOutlet from "./Admin/AdminOutlet.jsx";
 import Enquiries from "./Admin/Enquiries.jsx";
+import EnquiryView from "./Admin/EnquiryView.jsx";
+import FadeInDiv from "../elements/FadeInDiv.jsx";
+import Enquiry from "./Admin/Enquiry.jsx";
 
 const Router = () => {
 
@@ -39,6 +42,7 @@ const Router = () => {
 
                 <Route path={"/admin"} element={<AdminOutlet/>}>
                     <Route path={"/admin/enquiries"} element={<Enquiries/>}/>
+                    <Route path={"/admin/enquiries/test"} element={<EnquiryView/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>
