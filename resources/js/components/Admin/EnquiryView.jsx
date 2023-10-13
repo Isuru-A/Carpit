@@ -1,17 +1,30 @@
 import FadeInDiv from "../../elements/FadeInDiv.jsx";
 import InLineButton from "../../elements/InLineButton.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 
 const EnquiryView = () => {
 
     const [enquiry, setEnquiry] = useState({})
+    const {id} = useParams()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        axios.get(`/api/admin/enquiries/${id}`)
+            .then(response => {
+                console.log(response.data)
+                setEnquiry(response.data)
+            })
+    }, [])
 
     return (
         <div id="enquiry-wrapper">
             <FadeInDiv id="admin-enquiries">
-                <h1>Enquiries</h1>
+                <h1>Enquiry</h1>
                 <div id="enquiry-view">
-                    <InLineButton id="enquiry-back">Close</InLineButton>
+                    <InLineButton id="enquiry-back" onClick={() => {
+                        navigate('/admin/enquiries')
+                    }}>Close</InLineButton>
                     <span className="enquiry-detail">Service Type: <span
                         className="enquiry-detail-value">{enquiry.service}</span></span>
                     <span className="enquiry-detail">Name: <span

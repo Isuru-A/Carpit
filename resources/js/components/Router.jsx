@@ -42,7 +42,7 @@ const Router = () => {
 
                 <Route path={"/admin"} element={<AdminOutlet/>}>
                     <Route path={"/admin/enquiries"} element={<Enquiries/>}/>
-                    <Route path={"/admin/enquiries/test"} element={<EnquiryView/>}/>
+                    <Route path={"/admin/enquiries/:id"} element={<EnquiryView/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>

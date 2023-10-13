@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('enquiries')->middleware([])->group(function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'index']);
+    Route::get('/{id}', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'get']);
 });
