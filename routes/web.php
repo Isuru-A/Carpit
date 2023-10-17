@@ -15,12 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/enquire', [\App\Http\Controllers\EnquiryController::class, 'create']);
 
-Route::view('admin', 'app')->middleware('auth');
+Route::view('admin', 'app')->middleware(['auth', 'admin']);
 Route::any('admin/{all}', function () {
     return view('app');
-})->where(['all' => '.*'])->middleware('auth');
+})
+    ->where(['all' => '.*'])
+    ->middleware(['auth', 'admin']);
 
-Route::view('login', 'app')->name('login');
+Route::redirect('/auth', '/auth/login')
+    ->name('login');
+Route::any('auth/{all}', function () {
+    return view('app');
+})
+    ->where(['all' => '.*']);
 
 /**
  * All other routes
@@ -29,5 +36,6 @@ Route::view('login', 'app')->name('login');
  */
 Route::any('{all}', function () {
     return view('app');
-})->where(['all' => '.*']);
+})
+    ->where(['all' => '.*']);
 
