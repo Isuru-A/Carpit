@@ -22,7 +22,8 @@ Route::any('admin/{all}', function () {
     ->where(['all' => '.*'])
     ->middleware(['auth', 'admin']);
 
-Route::redirect('/auth', '/auth/login')
+Route::redirect('/auth', '/auth/login');
+Route::view('/auth/login', 'app')
     ->name('login');
 Route::post('auth/login', [\App\Http\Controllers\Auth\AuthenticationController::class, 'login']);
 Route::any('auth/{all}', function () {
