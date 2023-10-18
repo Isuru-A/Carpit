@@ -7,9 +7,23 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Str;
+use Throwable;
 
 class UserRepository implements UserRepositoryInterface
 {
+    /**
+     * @throws Throwable
+     */
+    public function create(array $data, bool $force): User
+    {
+        $user = new User();
+
+        $force ? $user->forceFill($data) : $user->fill($data);
+
+        $user->saveOrFail();
+
+        return $user;
+    }
 
     /**
      * @inheritDoc
