@@ -14,7 +14,7 @@ class UserRepository implements UserRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function get($uuid): User|null
+    public function get($uuid): array|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
     {
         $user = [];
         if (Str::isUuid($uuid)) {
@@ -25,6 +25,10 @@ class UserRepository implements UserRepositoryInterface
              */
         } else if (filter_var($uuid, FILTER_VALIDATE_EMAIL)) {
             $user = User::query()->where('email', $uuid)->first();
+        }
+
+        if (!$user) {
+            throw new ModelNotFoundException('User not found');
         }
 
         return $user;
@@ -38,7 +42,7 @@ class UserRepository implements UserRepositoryInterface
         try {
             $user = User::query()->findOrFail($uuid);
         } catch (ModelNotFoundException $e) {
-            return false;
+            throw new ModelNotFoundException('User not found');
         }
 
         try {
