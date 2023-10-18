@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::prefix('enquiries')->middleware([])->group(function () {
-    Route::get('/', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'index']);
-    Route::get('/{id}', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'get']);
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::prefix('enquiries')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'index']);
+        Route::get('/{id}', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'get']);
+    });
 });
