@@ -6,10 +6,13 @@ import Field from "../../../elements/Field.jsx";
 import validate from "../../../../scripts/validate.js";
 import InLineButton from "../../../elements/InLineButton.jsx";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
 
     const [serverErrors, setServerErrors] = useState({})
+    const query = new URLSearchParams(window.location.search)
+    const navigate = useNavigate()
 
     return (
         <FadeInDiv id="login-wrapper">
@@ -20,7 +23,7 @@ const Login = () => {
                 }} onSubmit={async (values) => {
                     await axios.post('/auth/login', values)
                         .then(response => {
-                            console.log(response.data)
+                            navigate(query.get('next'))
                         })
                         .catch(e => {
                             setServerErrors(e.response.data.errors)
