@@ -24,7 +24,7 @@ Route::any('admin/{all}', function () {
 
 Route::redirect('/auth', '/auth/login');
 Route::view('/auth/login', 'app')
-    ->name('login');
+    ->name('login')->middleware('guest');
 Route::post('auth/login', [\App\Http\Controllers\Auth\AuthenticationController::class, 'login']);
 Route::any('auth/{all}', function () {
     return view('app');
