@@ -24,6 +24,7 @@ Route::any('admin/{all}', function () {
 
 Route::redirect('/auth', '/auth/login')
     ->name('login');
+Route::post('auth/login', [\App\Http\Controllers\Auth\AuthenticationController::class, 'login']);
 Route::any('auth/{all}', function () {
     return view('app');
 })
