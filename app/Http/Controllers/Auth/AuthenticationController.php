@@ -23,8 +23,9 @@ class AuthenticationController extends AbstractAuthenticationController
 
     public function __construct(
         UserRepositoryInterface $userRepository,
-        Hasher $hasher
-    ) {
+        Hasher                  $hasher
+    )
+    {
         $this->userRepository = $userRepository;
         $this->hasher = $hasher;
     }
