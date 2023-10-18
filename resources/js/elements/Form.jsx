@@ -1,5 +1,5 @@
 import {Form as FormikForm} from "formik";
-// import Loader from "../components/Loader";
+import FormLoader from "../components/FormLoader.jsx";
 
 const Form = ({id, loading, noSubmit, cta, children}) => {
 
@@ -9,7 +9,7 @@ const Form = ({id, loading, noSubmit, cta, children}) => {
                 {children}
                 {noSubmit ? '' : <button type="submit">{cta ? cta : 'Done'}</button>}
             </FormikForm>
-            {/*{loading ? <Loader/> : <></>}*/}
+            {loading ? <FormLoader/> : <></>}
         </div>
     )
 }

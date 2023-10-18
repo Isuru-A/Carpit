@@ -26,11 +26,23 @@ const Login = () => {
                             setServerErrors(e.response.data.errors)
                         })
                 }}>
-                    {({errors}) => (
+                    {({errors, isSubmitting}) => (
                         <>
-                            <Form id="auth-form" cta="Enter">
-                                <Field name="email" label="Email" validate={validate.email} error={serverErrors.email ? serverErrors.email : errors.email}/>
-                                <Field password name="password" label="Password" validate={validate.require} error={serverErrors.password ? serverErrors.password : errors.password}/>
+                            <Form id="auth-form" cta="Enter" loading={isSubmitting}>
+                                <Field name="email" label="Email" validate={(value) => {
+                                    setServerErrors({
+                                        ...serverErrors,
+                                        email: ''
+                                    })
+                                    return validate.email(value)
+                                }} error={serverErrors.email ? serverErrors.email : errors.email}/>
+                                <Field password name="password" label="Password" validate={(value) => {
+                                    setServerErrors({
+                                        ...serverErrors,
+                                        password: ''
+                                    })
+                                    return validate.require(value)
+                                }} error={serverErrors.password ? serverErrors.password : errors.password}/>
                             </Form>
                             <div className="auth-actions">
                                 <InLineButton>Forgot Password?</InLineButton>
