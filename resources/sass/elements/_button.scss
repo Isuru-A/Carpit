@@ -1,9 +1,11 @@
 .button {
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .button-in-line {
     color: $font-dark;
+    cursor: pointer;
     &:hover {
         opacity: .5;
     }
