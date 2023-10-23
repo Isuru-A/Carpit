@@ -40,7 +40,7 @@ class NewMessageService
         if ($user = $request->user()) {
             $data = [
                 ...$data,
-                'uuid' => $user->uuid,
+                'user_uuid' => $user->uuid,
                 'admin' => $user->admin,
             ];
         }
@@ -48,12 +48,12 @@ class NewMessageService
         /*
          * Get the enquiry linked to the message
          */
-        $enquiry = $this->enquiryRepository->get($data['enquiry_ud']);
+        $enquiry = $this->enquiryRepository->get($data['enquiry_id']);
 
         /**
          * Throw an exception if the enquiry is archived
          */
-        if (!$enquiry->archived) {
+        if ($enquiry->archived) {
             throw new Exception('Cannot send a message to archived enquiry');
         }
 
