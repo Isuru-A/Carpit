@@ -12,12 +12,12 @@
 
     h1 {
         margin-top: 7rem !important;
-        border-bottom: solid 2px rgba($font-dark, .25);
         padding-bottom: 1.25rem;
         width: 100%;
     }
 
-    #enquiry-list {
+    .enquiry-list {
+        border-top: solid 2px rgba($font-dark, .25);
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -71,6 +71,20 @@
         }
     }
 
+    #enquiry-filter {
+        font-size: 1rem;
+        font-weight: lighter;
+        float: right;
+        margin-left: auto;
+        margin-right: 1.75rem;
+        margin-bottom: 1rem;
+        color: $splash;
+        text-decoration: underline;
+        &:hover {
+            color: $font-dark;
+        }
+    }
+
     #enquiry-view {
         display: flex;
         flex-direction: column;
@@ -104,6 +118,8 @@
             margin-top: 1.75rem;
             color: rgba($font-dark, .5);
             font-weight: lighter;
+            overflow-x: scroll;
+            transition: max-height .5s;
         }
     }
 
@@ -119,6 +135,13 @@
             cursor: pointer;
             font-weight: lighter;
         }
+        #enquiry-reply-cancel {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            color: $font-dark;
+            cursor: pointer;
+            font-weight: lighter;
+        }
 
         #enquiry-archive {
             text-transform: uppercase;
@@ -127,6 +150,39 @@
             color: rgba($font-dark, 1);
             cursor: pointer;
             font-weight: lighter;
+        }
+
+        #enquiry-reply-send {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            margin-left: 1rem;
+            color: $splash;
+            cursor: pointer;
+            font-weight: lighter;
+        }
+    }
+
+    #enquiry-reply-wrapper {
+        width: 100%;
+        #enquiry-reply-form {
+            padding: 1rem 1rem 0;
+
+            textarea {
+                color: rgba($font-dark, .5);
+                height: 10vh;
+            }
+            button[type='submit'] {
+                background-color: transparent;
+                text-transform: uppercase;
+                letter-spacing: .25rem;
+                margin-left: auto;
+                float: right;
+                padding: 0;
+                margin-right: .75rem;
+                color: $splash;
+                cursor: pointer;
+                font-weight: lighter;
+            }
         }
     }
 }

@@ -2,10 +2,12 @@ import FadeInDiv from "../../elements/FadeInDiv.jsx";
 import InLineButton from "../../elements/InLineButton.jsx";
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
+import EnquiryReply from "./EnquiryReply.jsx";
 
 const EnquiryView = () => {
 
     const [enquiry, setEnquiry] = useState({})
+    const [isReplying, setIsReplying] = useState(false)
     const {id} = useParams()
     const navigate = useNavigate()
 
@@ -33,13 +35,18 @@ const EnquiryView = () => {
                     <span className="enquiry-detail">E-Mail: <span
                         className="enquiry-detail-value">{enquiry.email}</span></span>
                     <span className="enquiry-detail">Phone: <span className="enquiry-detail-value">{enquiry.phone}</span></span>
-                    <p>
+                    <p style={{
+                        maxHeight: isReplying ? '22.5vh' : '41vh'
+                    }}>
                         {enquiry.enquiry}
                     </p>
                 </div>
+                {isReplying ? <EnquiryReply/> : ''}
                 <div id="enquiry-actions">
-                    <InLineButton id="enquiry-archive">Archive</InLineButton>
-                    <InLineButton id="enquiry-reply">Reply</InLineButton>
+                    {isReplying ? '' : <InLineButton id="enquiry-archive">Archive</InLineButton>}
+                    <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={() => {
+                        setIsReplying(!isReplying)
+                    }}>{isReplying ? 'Cancel' : 'Reply'}</InLineButton>
                 </div>
             </FadeInDiv>
         </div>

@@ -1,12 +1,12 @@
 import FadeInDiv from "../../elements/FadeInDiv.jsx";
-import Enquiry from "./Enquiry.jsx";
 import {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import InLineButton from "../../elements/InLineButton.jsx";
+import EnquiriesNew from "./EnquiriesNew.jsx";
 
 const Enquiries = () => {
 
+    const [view, setView] = useState(0)
     const [enquiries, setEnquiries] = useState([])
-    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('/api/admin/enquiries')
@@ -20,21 +20,16 @@ const Enquiries = () => {
         <FadeInDiv id="enquiry-wrapper">
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
-                <div id="enquiry-list">
-                    {(enquiries.length === 0) ?
-                        (
-                            <Enquiry service="Uh Oh!" name="No new enquiries"/>
-                        ) : (
-                            <>
-                                {enquiries.map(enquiry => (
-                                    <Enquiry name={enquiry.name} service={enquiry.service} enquiry={enquiry.enquiry} onClick={() => {
-                                        navigate(`/admin/enquiries/${enquiry.id}`)
-                                    }}/>
-                                ))}
-                            </>
-                        )
+                <InLineButton id="enquiry-filter" onClick={() => {
+                    if (view === 2) {
+                        setView(0)
+                    } else {
+                        setView(view + 1)
                     }
-                </div>
+                }}>
+                    {(view === 0) ? 'New' : (view === 1) ? 'Active' : 'Archived'}
+                </InLineButton>
+                {(view === 0) ? <EnquiriesNew enquiries={enquiries}/> : (view === 1) ? '' : ''}
             </div>
         </FadeInDiv>
     )
