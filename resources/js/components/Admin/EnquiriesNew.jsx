@@ -13,7 +13,7 @@ const EnquiriesNew = ({enquiries}) => {
                 ) : (
                     <>
                         {enquiries.map(enquiry => (
-                            <Enquiry key={Math.random()} name={enquiry.name} service={enquiry.service}
+                            <Enquiry key={enquiry.id} name={enquiry.name} service={enquiry.service}
                                      enquiry={enquiry.enquiry}
                                      onClick={() => {
                                          navigate(`/admin/enquiries/${enquiry.id}`)
