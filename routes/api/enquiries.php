@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(base_path('routes/api/admin.php'));
-Route::prefix('enquiries')->group(base_path('routes/api/enquiries.php'));
+Route::prefix('/{id}')->group(function () {
+    Route::post('/message', [\App\Http\Controllers\MessageController::class, 'create']);
+});
