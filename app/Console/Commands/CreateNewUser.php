@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Enquiry\User\CreateUserService;
+use App\Services\User\CreateUserService;
 use Exception;
 use Illuminate\Console\Command;
 
