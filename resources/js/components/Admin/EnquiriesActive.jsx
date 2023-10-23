@@ -1,9 +1,6 @@
 import Enquiry from "./Enquiry.jsx";
-import {useNavigate} from "react-router-dom";
 
-const EnquiriesNew = ({enquiries}) => {
-
-    const navigate = useNavigate()
+const EnquiriesActive = ({enquiries}) => {
 
     return (
         <div className="enquiry-list">
@@ -26,4 +23,4 @@ const EnquiriesNew = ({enquiries}) => {
     )
 }
 
-export default EnquiriesNew
+export default EnquiriesActive

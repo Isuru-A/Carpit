@@ -41,7 +41,7 @@ const EnquiryView = () => {
                         {enquiry.enquiry}
                     </p>
                 </div>
-                {isReplying ? <EnquiryReply/> : ''}
+                {isReplying ? <EnquiryReply enquiry={enquiry}/> : ''}
                 <div id="enquiry-actions">
                     {isReplying ? '' : <InLineButton id="enquiry-archive">Archive</InLineButton>}
                     <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={() => {

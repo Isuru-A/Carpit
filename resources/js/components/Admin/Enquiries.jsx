@@ -1,12 +1,15 @@
 import FadeInDiv from "../../elements/FadeInDiv.jsx";
 import {useEffect, useState} from "react";
 import InLineButton from "../../elements/InLineButton.jsx";
-import EnquiriesNew from "./EnquiriesNew.jsx";
+import Enquiry from "./Enquiry.jsx";
+import {useNavigate} from "react-router-dom";
 
 const Enquiries = () => {
 
     const [view, setView] = useState(0)
     const [enquiries, setEnquiries] = useState([])
+    const [filtered, setFiltered] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('/api/admin/enquiries')
@@ -21,15 +24,41 @@ const Enquiries = () => {
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
                 <InLineButton id="enquiry-filter" onClick={() => {
-                    if (view === 2) {
-                        setView(0)
-                    } else {
-                        setView(view + 1)
+                    switch (view) {
+                        case 0:
+                            setView(1)
+                            setFiltered(enquiries.filter(enquiry => enquiry.active && !enquiry.archived))
+                            break
+                        case 1:
+                            setView(2)
+                            setFiltered(enquiries.filter(enquiry => !enquiry.active && enquiry.archived))
+                            break
+                        case 2:
+                            setView(0)
+                            setFiltered(enquiries.filter(enquiry => !enquiry.active && !enquiry.archived))
+                            break
                     }
                 }}>
                     {(view === 0) ? 'New' : (view === 1) ? 'Active' : 'Archived'}
                 </InLineButton>
-                {(view === 0) ? <EnquiriesNew enquiries={enquiries}/> : (view === 1) ? '' : ''}
+                <div className="enquiry-list">
+                    {(filtered.length === 0) ?
+                        (
+                            <Enquiry service="Uh Oh!"
+                                     name={`No ${(view === 0) ? 'new' : (view === 1) ? 'active' : 'archived'} enquiries`}/>
+                        ) : (
+                            <>
+                                {filtered.map(enquiry => (
+                                    <Enquiry key={enquiry.id} name={enquiry.name} service={enquiry.service}
+                                             enquiry={enquiry.enquiry}
+                                             onClick={() => {
+                                                 navigate(`/admin/enquiries/${enquiry.id}`)
+                                             }}/>
+                                ))}
+                            </>
+                        )
+                    }
+                </div>
             </div>
         </FadeInDiv>
     )
