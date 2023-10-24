@@ -1,0 +1,33 @@
+.message-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    transition: max-height .5s;
+    margin-top: 1.5rem;
+    max-height: 25vh;
+    .message {
+        padding: 1rem;
+        font-size: 1rem;
+        width: 55%;
+        align-self: flex-start;
+        border-radius: 5px;
+        background-color: rgba($font-dark, .25);
+        color: $font-dark;
+        margin-bottom: 1rem;
+    }
+
+    .message-admin {
+        align-self: flex-end;
+        background-color: rgba($font-dark, .5);
+    }
+}
+
+#enquiry-message-reply {
+    #enquiry-reply-form {
+        padding: 0 !important;
+    }
+    textarea {
+        height: 3vh !important;
+    }
+}

@@ -160,9 +160,18 @@
             cursor: pointer;
             font-weight: lighter;
         }
+
+        #enquiry-show {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            margin-left: 1rem;
+            color: $font-dark;
+            cursor: pointer;
+            font-weight: lighter;
+        }
     }
 
-    #enquiry-reply-wrapper {
+    .enquiry-reply-wrapper {
         width: 100%;
         #enquiry-reply-form {
             padding: 1rem 1rem 0;
