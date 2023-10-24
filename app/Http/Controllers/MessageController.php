@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Repository\MessageRepositoryInterface;
 use App\Services\Enquiry\NewMessageService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -15,11 +16,18 @@ class MessageController extends Controller
      */
     private NewMessageService $newMessageService;
 
+    /**
+     * @var MessageRepositoryInterface
+     */
+    private MessageRepositoryInterface $messageRepository;
+
     public function __construct(
-        NewMessageService $newMessageService
+        NewMessageService          $newMessageService,
+        MessageRepositoryInterface $messageRepository,
     )
     {
         $this->newMessageService = $newMessageService;
+        $this->messageRepository = $messageRepository;
     }
 
     /**
@@ -61,7 +69,15 @@ class MessageController extends Controller
         }
 
         return new JsonResponse([
-            'success' => true
+            'success' => true,
+            'data' => [
+                'message' => $message
+            ]
         ]);
+    }
+
+    public function get(Request $request, $id): \Illuminate\Database\Eloquent\Collection
+    {
+        return $this->messageRepository->getEnquiryMessages($id);
     }
 }

@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/{id}')->group(function () {
     Route::post('/message', [\App\Http\Controllers\MessageController::class, 'create']);
+    Route::get('/messages', [\App\Http\Controllers\MessageController::class, 'get']);
 });

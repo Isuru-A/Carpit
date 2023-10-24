@@ -4,20 +4,23 @@ import Form from "../../elements/Form.jsx";
 import TextArea from "../../elements/TextArea.jsx";
 import validate from "../../../scripts/validate.js";
 
-const EnquiryReply = () => {
+const EnquiryReply = ({enquiry, id, callBack}) => {
 
     return (
-        <FadeInDiv id="enquiry-reply-wrapper">
+        <FadeInDiv className="enquiry-reply-wrapper" id={id}>
             <Formik initialValues={{
                 reply: ''
-            }} onSubmit={async () => {
-
+            }} onSubmit={async (values) => {
+                await axios.post(`/api/enquiries/${enquiry.id}/message`, {
+                    message: values.reply
+                })
+                    .then(response => {
+                        callBack(response)
+                    })
             }}>
                 {({errors, isSubmitting}) => (
                     <Form id="enquiry-reply-form" cta="Send" loading={isSubmitting}>
-                        <TextArea name="reply" validate={(value) => {
-                            return validate.require(value, 100)
-                        }} error={errors.reply}/>
+                        <TextArea name="reply" validate={validate.require} error={errors.reply}/>
                     </Form>
                 )}
             </Formik>

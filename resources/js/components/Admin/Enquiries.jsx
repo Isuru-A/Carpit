@@ -15,6 +15,7 @@ const Enquiries = () => {
         axios.get('/api/admin/enquiries')
             .then(response => {
                 setEnquiries(response.data)
+                setFiltered(response.data.filter(enquiry => !enquiry.active && !enquiry.archived))
             })
         // TODO Add loader and async
     }, [])
