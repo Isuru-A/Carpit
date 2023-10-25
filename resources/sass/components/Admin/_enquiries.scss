@@ -80,6 +80,7 @@
         margin-bottom: 1rem;
         color: $splash;
         text-decoration: underline;
+
         &:hover {
             color: $font-dark;
         }
@@ -128,6 +129,7 @@
         margin-left: auto;
         margin-right: 1.75rem;
         margin-top: 1rem;
+
         #enquiry-reply {
             text-transform: uppercase;
             letter-spacing: .25rem;
@@ -136,6 +138,7 @@
             font-weight: lighter;
             margin-left: 1rem;
         }
+
         #enquiry-reply-cancel {
             text-transform: uppercase;
             letter-spacing: .25rem;
@@ -171,8 +174,35 @@
         }
     }
 
+    #enquiry-active-actions {
+        width: 100%;
+        margin-left: 1.75rem;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        #enquiry-active-archive {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            margin-left: 1rem;
+            color: $font-dark;
+            cursor: pointer;
+            font-weight: lighter;
+        }
+
+        #enquiry-active-complete {
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            margin-left: 1rem;
+            color: green;
+            cursor: pointer;
+            font-weight: lighter;
+        }
+    }
+
     .enquiry-reply-wrapper {
         width: 100%;
+
         #enquiry-reply-form {
             padding: 1rem 1rem 0;
 
@@ -180,6 +210,7 @@
                 color: rgba($font-dark, .5);
                 height: 10vh;
             }
+
             button[type='submit'] {
                 background-color: transparent;
                 text-transform: uppercase;

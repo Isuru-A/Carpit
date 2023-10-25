@@ -48,9 +48,14 @@ const EnquiryViewActive = ({enquiry}) => {
                 <div id="enquiry-actions">
                     <InLineButton id="enquiry-show" onClick={() => {
                         setIsShowing(!isShowing)
-                    }}>{isShowing ? 'Hide' : 'Show'}</InLineButton>
+                    }}>{isShowing ? 'Less' : 'More'}</InLineButton>
                 </div>
-                {isShowing ? '' : (
+                {isShowing ? (
+                    <div id="enquiry-active-actions">
+                        <InLineButton id="enquiry-active-archive">Archive</InLineButton>
+                        <InLineButton id="enquiry-active-complete">Complete</InLineButton>
+                    </div>
+                ) : (
                     <>
                         <FadeInDiv className="message-container">
                             {messages.map(message => (
