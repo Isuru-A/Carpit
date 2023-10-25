@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Message from "./Message.jsx";
 import EnquiryReply from "./EnquiryReply.jsx";
+import MessageBox from "../../elements/MessageBox.jsx";
 
 const EnquiryViewActive = ({enquiry}) => {
 
@@ -23,7 +24,7 @@ const EnquiryViewActive = ({enquiry}) => {
     }, [])
 
     return (
-        <div id="enquiry-wrapper">
+        <div className="enquiry-wrapper">
             <FadeInDiv id="admin-enquiries">
                 <h1>Enquiry</h1>
                 <div id="enquiry-view">
@@ -56,12 +57,19 @@ const EnquiryViewActive = ({enquiry}) => {
                                 <Message admin={message.admin}>{message.message}</Message>
                             ))}
                         </FadeInDiv>
-                        <EnquiryReply enquiry={enquiry} id="enquiry-message-reply" callBack={(response) => {
-                            setMessages([
-                                ...messages,
-                                response.data.data.message
-                            ])
-                        }}/>
+                        {enquiry.user_uuid ?
+                            <EnquiryReply enquiry={enquiry} id="enquiry-message-reply" callBack={(response) => {
+                                setMessages([
+                                    ...messages,
+                                    response.data.data.message
+                                ])
+                            }}/> :
+                            <MessageBox id="enquiry-no-uuid" weight="warning">
+                                You cannot reply to this enquiry as the user is not registered with CarPit Automotive.
+                                Please
+                                contact them via email or phone to respond.
+                            </MessageBox>
+                        }
                     </>
                 )}
             </FadeInDiv>

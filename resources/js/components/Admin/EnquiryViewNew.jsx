@@ -1,8 +1,9 @@
 import FadeInDiv from "../../elements/FadeInDiv.jsx";
 import InLineButton from "../../elements/InLineButton.jsx";
-import {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import EnquiryReply from "./EnquiryReply.jsx";
+import MessageBox from "../../elements/MessageBox.jsx";
 
 
 const EnquiryViewNew = ({enquiry, setEnquiry}) => {
@@ -11,7 +12,7 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
     const [isReplying, setIsReplying] = useState(false)
 
     return (
-        <div id="enquiry-wrapper">
+        <div className="enquiry-wrapper">
             <FadeInDiv id="admin-enquiries">
                 <h1>Enquiry</h1>
                 <div id="enquiry-view">
@@ -24,7 +25,8 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
                         className="enquiry-detail-value">{enquiry.name}</span></span>
                     <span className="enquiry-detail">E-Mail: <span
                         className="enquiry-detail-value">{enquiry.email}</span></span>
-                    <span className="enquiry-detail">Phone: <span className="enquiry-detail-value">{enquiry.phone}</span></span>
+                    <span className="enquiry-detail">Phone: <span
+                        className="enquiry-detail-value">{enquiry.phone}</span></span>
                     <p style={{
                         maxHeight: isReplying ? '22.5vh' : '41vh'
                     }}>
@@ -39,10 +41,24 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
                 }}/> : ''}
                 <div id="enquiry-actions">
                     {isReplying ? '' : <InLineButton id="enquiry-archive">Archive</InLineButton>}
-                    <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={() => {
-                        setIsReplying(!isReplying)
-                    }}>{isReplying ? 'Cancel' : 'Reply'}</InLineButton>
+                    <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={async () => {
+                        if (enquiry.uuid) {
+                            setIsReplying(!isReplying)
+                        } else {
+                            await axios.post(`/api/admin/enquiries/${enquiry.id}/accept`)
+                                .then(response => {
+                                    navigate('/admin/enquiries')
+                                })
+                        }
+                    }}>{enquiry.user_uuid ? isReplying ? 'Cancel' : 'Reply' : 'Accept'}</InLineButton>
                 </div>
+                {enquiry.user_uuid
+                    ? ''
+                    : <MessageBox id="enquiry-no-uuid" weight="warning">
+                        You cannot reply to this enquiry as the user is not registered with CarPit Automotive. Please
+                        contact them via email or phone to respond.
+                    </MessageBox>
+                }
             </FadeInDiv>
         </div>
     )
