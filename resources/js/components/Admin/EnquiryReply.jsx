@@ -10,11 +10,12 @@ const EnquiryReply = ({enquiry, id, callBack}) => {
         <FadeInDiv className="enquiry-reply-wrapper" id={id}>
             <Formik initialValues={{
                 reply: ''
-            }} onSubmit={async (values) => {
+            }} onSubmit={async (values, {resetForm}) => {
                 await axios.post(`/api/enquiries/${enquiry.id}/message`, {
                     message: values.reply
                 })
                     .then(response => {
+                        resetForm()
                         callBack(response)
                     })
             }}>

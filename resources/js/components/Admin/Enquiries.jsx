@@ -21,7 +21,7 @@ const Enquiries = () => {
     }, [])
 
     return (
-        <FadeInDiv id="enquiry-wrapper">
+        <FadeInDiv className="enquiry-wrapper">
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
                 <InLineButton id="enquiry-filter" onClick={() => {
