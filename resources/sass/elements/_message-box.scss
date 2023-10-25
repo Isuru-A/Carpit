@@ -1,0 +1,19 @@
+.message-box {
+    width: 100%;
+    border: solid 1px rgba($font-dark, .5);
+    padding: 1rem;
+    border-radius: 5px;
+    color: rgba($font-dark, .5);
+}
+
+.message-box-danger {
+    border-color: rgba($red, .5);
+}
+
+.message-box-warning {
+    border-color: rgba($splash, .5);
+}
+
+.message-box-success {
+    border-color: rgba(green, .5);
+}
