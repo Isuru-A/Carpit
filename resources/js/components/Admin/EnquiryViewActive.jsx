@@ -63,7 +63,17 @@ const EnquiryViewActive = ({enquiry, setEnquiry}) => {
                                     navigate('/admin/enquiries')
                                 })
                         }}>Archive</InLineButton>
-                        <InLineButton id="enquiry-active-complete">Complete</InLineButton>
+                        <InLineButton id="enquiry-active-complete" onClick={async () => {
+                            await axios.post(`/api/admin/enquiries/${enquiry.id}/complete`)
+                                .then(response => {
+                                    setEnquiry({
+                                        ...enquiry,
+                                        active: 1,
+                                        archived: 1
+                                    })
+                                    navigate('/admin/enquiries')
+                                })
+                        }}>Complete</InLineButton>
                     </div>
                 ) : (
                     <>
