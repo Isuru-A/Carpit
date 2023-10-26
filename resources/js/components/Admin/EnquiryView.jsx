@@ -22,7 +22,7 @@ const EnquiryView = ({set}) => {
             {/*New enquiries*/}
             {(!enquiry.active && !enquiry.archived) ? <EnquiryViewNew enquiry={enquiry} setEnquiry={setEnquiry}/> : ''}
             {/*Active enquiries*/}
-            {(enquiry.active && !enquiry.archived) ? <EnquiryViewActive enquiry={enquiry}/> : ''}
+            {(enquiry.active && !enquiry.archived) ? <EnquiryViewActive enquiry={enquiry} setEnquiry={setEnquiry}/> : ''}
             {/*Archived enquiries*/}
             {(!enquiry.active && enquiry.archived) ? <></> : ''}
         </>

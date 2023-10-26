@@ -40,7 +40,15 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
                     })
                 }}/> : ''}
                 <div id="enquiry-actions">
-                    {isReplying ? '' : <InLineButton id="enquiry-archive">Archive</InLineButton>}
+                    {isReplying ? '' : <InLineButton id="enquiry-archive" onClick={async  () => {
+                        await axios.post(`/api/admin/enquiries/${enquiry.id}/archive`)
+                            .then(response => {
+                                setEnquiry({
+                                    archived: 1
+                                })
+                                navigate('/admin/enquiries')
+                            })
+                    }}>Archive</InLineButton>}
                     <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={async () => {
                         if (enquiry.uuid) {
                             setIsReplying(!isReplying)

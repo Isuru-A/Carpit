@@ -6,7 +6,7 @@ import Message from "./Message.jsx";
 import EnquiryReply from "./EnquiryReply.jsx";
 import MessageBox from "../../elements/MessageBox.jsx";
 
-const EnquiryViewActive = ({enquiry}) => {
+const EnquiryViewActive = ({enquiry, setEnquiry}) => {
 
     const [isShowing, setIsShowing] = useState(false)
     const [messages, setMessages] = useState([])
@@ -52,7 +52,17 @@ const EnquiryViewActive = ({enquiry}) => {
                 </div>
                 {isShowing ? (
                     <div id="enquiry-active-actions">
-                        <InLineButton id="enquiry-active-archive">Archive</InLineButton>
+                        <InLineButton id="enquiry-active-archive" onClick={async () => {
+                            await axios.post(`/api/admin/enquiries/${enquiry.id}/archive`)
+                                .then(response => {
+                                    setEnquiry({
+                                        ...enquiry,
+                                        active: 0,
+                                        archived: 1
+                                    })
+                                    navigate('/admin/enquiries')
+                                })
+                        }}>Archive</InLineButton>
                         <InLineButton id="enquiry-active-complete">Complete</InLineButton>
                     </div>
                 ) : (
