@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +18,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::get('/{id}', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'get']);
         Route::post('/{id}/accept', [\App\Http\Controllers\Admin\AdminEnquiryController::class, 'accept']);
         Route::post('/{id}/archive', [App\Http\Controllers\Admin\AdminEnquiryController::class, 'archive']);
+        Route::post('/{id}/complete', [App\Http\Controllers\Admin\AdminEnquiryController::class, 'complete']);
     });
 });

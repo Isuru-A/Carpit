@@ -74,7 +74,32 @@ class AdminEnquiryController extends Controller
         } catch (Exception $e) {
             return new JsonResponse([
                 'success' => false
+            ], 500);
+        }
+
+        return new JsonResponse([
+            'success' => true
+        ]);
+    }
+
+    /**
+     * Handle requests to complete an enquiry
+     *
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function complete(Request $request, $id): JsonResponse
+    {
+        try {
+            $this->enquiryRepository->update($id, [
+                'active' => 1,
+                'archived' => 1
             ]);
+        } catch (Exception $e) {
+            return new JsonResponse([
+                'success' => false
+            ], 500);
         }
 
         return new JsonResponse([
