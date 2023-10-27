@@ -7,4 +7,14 @@
         padding-right: 1.5rem;
         z-index: 5;
     }
+    #login-button {
+        text-transform: uppercase;
+        letter-spacing: .25rem;
+        color: $font-main;
+        cursor: pointer;
+        font-weight: normal;
+        margin-left: auto;
+        float: right;
+        margin-right: 2vw;
+    }
 }
