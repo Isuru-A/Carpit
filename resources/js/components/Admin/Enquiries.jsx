@@ -1,12 +1,12 @@
 import FadeInDiv from "../../elements/FadeInDiv.jsx";
 import {useEffect, useState} from "react";
-import InLineButton from "../../elements/InLineButton.jsx";
 import Enquiry from "./Enquiry.jsx";
 import {useNavigate} from "react-router-dom";
+import {Formik} from "formik";
 
 const Enquiries = () => {
 
-    const [view, setView] = useState(0)
+    const [view, setView] = useState('new')
     const [enquiries, setEnquiries] = useState([])
     const [filtered, setFiltered] = useState([])
     const navigate = useNavigate()
@@ -24,29 +24,39 @@ const Enquiries = () => {
         <FadeInDiv className="enquiry-wrapper">
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
-                <InLineButton id="enquiry-filter" onClick={() => {
-                    switch (view) {
-                        case 0:
-                            setView(1)
-                            setFiltered(enquiries.filter(enquiry => enquiry.active && !enquiry.archived))
-                            break
-                        case 1:
-                            setView(2)
-                            setFiltered(enquiries.filter(enquiry => !enquiry.active && enquiry.archived))
-                            break
-                        case 2:
-                            setView(0)
-                            setFiltered(enquiries.filter(enquiry => !enquiry.active && !enquiry.archived))
-                            break
-                    }
+                <Formik initialValues={{
+                    view: 'new'
+                }} onSubmit={() => {
+                    //
                 }}>
-                    {(view === 0) ? 'New' : (view === 1) ? 'Active' : 'Archived'}
-                </InLineButton>
+                    <select name="view" id="enquiry-filter">
+                        <option onClick={() => {
+                            setFiltered(enquiries.filter(enquiry => !enquiry.active && !enquiry.archived))
+                            setView('new')
+                        }}>New
+                        </option>
+                        <option onClick={() => {
+                            setFiltered(enquiries.filter(enquiry => enquiry.active && !enquiry.archived))
+                            setView('active')
+                        }}>Active
+                        </option>
+                        <option onClick={() => {
+                            setFiltered(enquiries.filter(enquiry => enquiry.active && enquiry.archived))
+                            setView('completed')
+                        }}>Completed
+                        </option>
+                        <option onClick={() => {
+                            setFiltered(enquiries.filter(enquiry => !enquiry.active && enquiry.archived))
+                            setView('archived')
+                        }}>Archived
+                        </option>
+                    </select>
+                </Formik>
                 <div className="enquiry-list">
                     {(filtered.length === 0) ?
                         (
                             <Enquiry service="Uh Oh!"
-                                     name={`No ${(view === 0) ? 'new' : (view === 1) ? 'active' : 'archived'} enquiries`}/>
+                                     name={`No ${view} enquiries`}/>
                         ) : (
                             <>
                                 {filtered.map(enquiry => (

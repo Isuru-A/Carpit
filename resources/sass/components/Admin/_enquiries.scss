@@ -80,6 +80,10 @@
         margin-bottom: 1rem;
         color: $splash;
         text-decoration: underline;
+        background-color: $font-main;
+        border: none;
+        outline: none;
+        text-align: right;
 
         &:hover {
             color: $font-dark;
