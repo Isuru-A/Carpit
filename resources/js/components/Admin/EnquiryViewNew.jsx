@@ -28,7 +28,7 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
                     <span className="enquiry-detail">Phone: <span
                         className="enquiry-detail-value">{enquiry.phone}</span></span>
                     <p style={{
-                        maxHeight: isReplying ? '22.5vh' : '41vh'
+                        maxHeight: isReplying ? '22.5vh' : '30vh'
                     }}>
                         {enquiry.enquiry}
                     </p>
@@ -50,7 +50,7 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
                             })
                     }}>Archive</InLineButton>}
                     <InLineButton id={isReplying ? "enquiry-reply-cancel" : "enquiry-reply"} onClick={async () => {
-                        if (enquiry.uuid) {
+                        if (enquiry.user_uuid) {
                             setIsReplying(!isReplying)
                         } else {
                             await axios.post(`/api/admin/enquiries/${enquiry.id}/accept`)

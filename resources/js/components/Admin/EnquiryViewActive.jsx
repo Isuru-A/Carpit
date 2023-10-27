@@ -40,7 +40,7 @@ const EnquiryViewActive = ({enquiry, setEnquiry}) => {
                     <span className="enquiry-detail">Phone: <span
                         className="enquiry-detail-value">{enquiry.phone}</span></span>
                     <p style={{
-                        maxHeight: !isShowing ? '5vh' : '41vh'
+                        maxHeight: !isShowing ? '5vh' : '30vh'
                     }}>
                         {enquiry.enquiry}
                     </p>
