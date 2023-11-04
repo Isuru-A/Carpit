@@ -1,4 +1,5 @@
 @import "Login/login";
+@import "Register/register";
 
 #auth-wrapper {
     width: 100vw;
@@ -15,7 +16,7 @@
         height: min-content;
         border-radius: 15px;
         box-shadow: 5px 5px 21px -10px $font-dark;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
         h1 {
             font-size: 1.5rem;
             font-weight: lighter;
@@ -51,7 +52,7 @@
                 margin-top: 2rem;
                 display: flex;
                 flex-direction: column;
-                gap: 1.25rem;
+                gap: .5rem;
                 width: calc(100% - 4rem - 10px);
                 align-items: start;
             }

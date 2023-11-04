@@ -48,6 +48,9 @@ const Login = () => {
                                 }} error={serverErrors.password ? serverErrors.password : errors.password}/>
                             </Form>
                             <div className="auth-actions">
+                                <InLineButton onClick={() => {
+                                    navigate('/auth/register')
+                                }}>Don't have and account?</InLineButton>
                                 <InLineButton>Forgot Password?</InLineButton>
                             </div>
                         </>

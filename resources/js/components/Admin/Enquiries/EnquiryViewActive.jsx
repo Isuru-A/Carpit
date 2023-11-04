@@ -1,10 +1,10 @@
-import FadeInDiv from "../../elements/FadeInDiv.jsx";
-import InLineButton from "../../elements/InLineButton.jsx";
+import FadeInDiv from "../../../elements/FadeInDiv.jsx";
+import InLineButton from "../../../elements/InLineButton.jsx";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import Message from "./Message.jsx";
+import Message from "../Message.jsx";
 import EnquiryReply from "./EnquiryReply.jsx";
-import MessageBox from "../../elements/MessageBox.jsx";
+import MessageBox from "../../../elements/MessageBox.jsx";
 
 const EnquiryViewActive = ({enquiry, setEnquiry}) => {
 

@@ -1,4 +1,4 @@
-import FadeInDiv from "../../elements/FadeInDiv.jsx";
+import FadeInDiv from "../../../elements/FadeInDiv.jsx";
 import {useEffect, useState} from "react";
 import Enquiry from "./Enquiry.jsx";
 import {useNavigate} from "react-router-dom";
@@ -25,7 +25,7 @@ const Enquiries = () => {
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
                 <Formik initialValues={{
-                    view: 'new'
+                    view: view
                 }} onSubmit={() => {
                     //
                 }}>

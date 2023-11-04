@@ -1,8 +1,8 @@
-import FadeInDiv from "../../elements/FadeInDiv.jsx";
+import FadeInDiv from "../../../elements/FadeInDiv.jsx";
 import {Formik} from "formik";
-import Form from "../../elements/Form.jsx";
-import TextArea from "../../elements/TextArea.jsx";
-import validate from "../../../scripts/validate.js";
+import Form from "../../../elements/Form.jsx";
+import TextArea from "../../../elements/TextArea.jsx";
+import validate from "../../../../scripts/validate.js";
 
 const EnquiryReply = ({enquiry, id, callBack}) => {
 

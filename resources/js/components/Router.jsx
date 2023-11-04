@@ -12,12 +12,13 @@ import Tuning from "./Services/Tuning.jsx";
 import Hero from "./Hero.jsx";
 import Enquire from "./Enquire/Enquire.jsx";
 import AdminOutlet from "./Admin/AdminOutlet.jsx";
-import Enquiries from "./Admin/Enquiries.jsx";
-import EnquiryView from "./Admin/EnquiryView.jsx";
+import Enquiries from "./Admin/Enquiries/Enquiries.jsx";
+import EnquiryView from "./Admin/Enquiries/EnquiryView.jsx";
 import FadeInDiv from "../elements/FadeInDiv.jsx";
-import Enquiry from "./Admin/Enquiry.jsx";
+import Enquiry from "./Admin/Enquiries/Enquiry.jsx";
 import Login from "./Auth/Login/Login.jsx";
 import AuthOutlet from "./Auth/AuthOutlet.jsx";
+import Register from "./Auth/Register/Register.jsx";
 
 const Router = () => {
 
@@ -33,6 +34,7 @@ const Router = () => {
                 {/*Login*/}
                 <Route path={'/auth'} element={<AuthOutlet/>}>
                     <Route path={'/auth/login'} element={<Login/>}/>
+                    <Route path={'/auth/register'} element={<Register/>}/>
                 </Route>
 
                 <Route path={'/'} element={<ContentOutlet/>}>
