@@ -12,7 +12,7 @@ const EnquiryViewNew = ({enquiry, setEnquiry}) => {
     const [isReplying, setIsReplying] = useState(false)
 
     return (
-        <div className="enquiry-wrapper">
+        <div className="list-wrapper">
             <FadeInDiv id="admin-enquiries">
                 <h1>Enquiry</h1>
                 <div id="enquiry-view">

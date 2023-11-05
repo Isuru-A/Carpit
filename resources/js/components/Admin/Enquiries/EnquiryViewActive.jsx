@@ -24,7 +24,7 @@ const EnquiryViewActive = ({enquiry, setEnquiry}) => {
     }, [])
 
     return (
-        <div className="enquiry-wrapper">
+        <div className="list-wrapper">
             <FadeInDiv id="admin-enquiries">
                 <h1>Enquiry</h1>
                 <div id="enquiry-view">

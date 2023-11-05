@@ -19,6 +19,7 @@ import Enquiry from "./Admin/Enquiries/Enquiry.jsx";
 import Login from "./Auth/Login/Login.jsx";
 import AuthOutlet from "./Auth/AuthOutlet.jsx";
 import Register from "./Auth/Register/Register.jsx";
+import Users from "./Admin/Users/Users.jsx";
 
 const Router = () => {
 
@@ -56,6 +57,7 @@ const Router = () => {
 
                     <Route path={"/admin/enquiries"} element={<Enquiries/>}/>
                     <Route path={"/admin/enquiries/:id"} element={<EnquiryView/>}/>
+                    <Route path={"/admin/users"} element={<Users/>}/>
                 </Route>
             </Routes>
         </AnimatePresence>

@@ -21,7 +21,7 @@ const Enquiries = () => {
     }, [])
 
     return (
-        <FadeInDiv className="enquiry-wrapper">
+        <FadeInDiv className="list-wrapper">
             <div id="admin-enquiries">
                 <h1>Enquiries</h1>
                 <Formik initialValues={{
@@ -29,7 +29,7 @@ const Enquiries = () => {
                 }} onSubmit={() => {
                     //
                 }}>
-                    <select name="view" id="enquiry-filter">
+                    <select name="view" className="item-filter">
                         <option onClick={() => {
                             setFiltered(enquiries.filter(enquiry => !enquiry.active && !enquiry.archived))
                             setView('new')
@@ -52,7 +52,7 @@ const Enquiries = () => {
                         </option>
                     </select>
                 </Formik>
-                <div className="enquiry-list">
+                <div className="item-list">
                     {(filtered.length === 0) ?
                         (
                             <Enquiry service="Uh Oh!"

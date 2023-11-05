@@ -3,6 +3,7 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+
     h1 {
         font-size: 2rem;
         font-weight: lighter;
@@ -19,7 +20,43 @@
         justify-content: center;
         margin-top: 1rem;
     }
+
+    .item-list {
+        border-top: solid 2px rgba($font-dark, .25);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-filter {
+        font-size: 1rem;
+        font-weight: lighter;
+        float: right;
+        margin-left: auto;
+        margin-right: 1.75rem;
+        margin-bottom: 1rem;
+        color: $splash;
+        text-decoration: underline;
+        background-color: $font-main;
+        border: none;
+        outline: none;
+        text-align: right;
+
+        &:hover {
+            color: $font-dark;
+        }
+    }
+
+    .list-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
 }
 
 @import "enquiries";
 @import "message";
+@import "users";
