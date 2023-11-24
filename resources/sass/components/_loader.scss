@@ -6,6 +6,11 @@
     height: 100%;
     background-color: $font-main;
 }
+
+.view-loader-wrapper {
+    height: 75vh;
+}
+
 .loader {
     border: 24px solid;
     border-color: rgba(51, 51, 68, 0.15) rgba(51, 51, 68, 0.25) rgba(51, 51, 68, 0.35) rgba(51, 51, 68, 0.5);
