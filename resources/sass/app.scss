@@ -38,4 +38,24 @@
     width: 100vw;
     background-image: url("../../public/assets/bg.jpg");
     background-size: cover;
+
+    .mobile-block {
+        background-color: $red;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h1 {
+            color: $font-main;
+            font-weight: normal;
+            font-size: 1.5rem;
+        }
+        span {
+            color: rgba($font-main, .5);
+            font-size: 1.25rem;
+            margin-top: .5rem;
+        }
+    }
 }
