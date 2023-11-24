@@ -23,7 +23,7 @@ const Login = () => {
                 }} onSubmit={async (values) => {
                     await axios.post('/auth/login', values)
                         .then(response => {
-                            navigate(query.get('next'))
+                            query.get('next') ? navigate(query.get('next')) : navigate('/')
                         })
                         .catch(e => {
                             setServerErrors(e.response.data.errors)
