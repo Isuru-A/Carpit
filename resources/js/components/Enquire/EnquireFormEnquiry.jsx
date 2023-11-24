@@ -5,8 +5,12 @@ import Select from "../../elements/Select.jsx";
 import TextArea from "../../elements/TextArea.jsx";
 import validate from "../../../scripts/validate.js";
 import axios from "axios";
+import {useState} from "react";
+import MessageBox from "../../elements/MessageBox.jsx";
 
 const EnquireFormEnquiry = ({setDetails, details, advance}) => {
+
+    const [error, setError] = useState(false)
 
     return (
         <FadeInDiv className="enquire">
@@ -20,6 +24,10 @@ const EnquireFormEnquiry = ({setDetails, details, advance}) => {
                 })
                     .then(response => {
                         advance()
+                    })
+                    .catch(e => {
+                        setError(true)
+                        console.log(error)
                     })
             }}>
                 {({errors}) => (
@@ -35,6 +43,11 @@ const EnquireFormEnquiry = ({setDetails, details, advance}) => {
                     </Form>
                 )}
             </Formik>
+            {error ? (
+                <MessageBox id="invalid-enquiry-message-box" weight="danger">
+                    Something went wrong whilst submitting your enquiry
+                </MessageBox>
+            ) : ''}
         </FadeInDiv>
     )
 }
