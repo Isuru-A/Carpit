@@ -20,7 +20,6 @@ const About = () => {
                     <li>Fast, friendly service</li>
                     <li>Fair prices</li>
                     <li>The highest quality parts and materials</li>
-                    <li>A 12-month warranty on all work</li>
                     <li>A satisfaction guarantee</li>
                 </ul>
             </p>
