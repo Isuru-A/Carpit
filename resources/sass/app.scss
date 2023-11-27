@@ -25,11 +25,14 @@
     @media (max-width: 1920px) {
         font-size: 14px;
     }
-    @media (max-width: 1280px) {
+    @media (max-width: 1280px) or (max-height: 650px) {
         font-size: 10px;
     }
-    @media (max-width: 640px) {
+    @media (max-width: 640px) or (max-height: 480px) {
         font-size: 8px;
+    }
+    @media (max-width: 480px) {
+        font-size: 6px;
     }
 }
 
