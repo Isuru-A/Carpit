@@ -31,6 +31,12 @@
     @media (max-width: 640px) {
         font-size: 8px;
     }
+    @media (max-width: 480px) {
+        font-size: 6px;
+    }
+    @media (max-height: 480px) {
+        font-size: 8px;
+    }
 }
 
 .app {
