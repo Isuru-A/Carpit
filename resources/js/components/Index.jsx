@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom";
 import Router from "./Router.jsx";
 import {MobileView, BrowserView} from "react-device-detect";
+import {Provider} from "react-redux";
+import store from "../../state/store.js";
 
 function Index() {
     return (
@@ -29,7 +31,9 @@ if (document.getElementById('root')) {
 
     App.render(
         <React.StrictMode>
-            <Index/>
+            <Provider store={store}>
+                <Index/>
+            </Provider>
 
         </React.StrictMode>
     )

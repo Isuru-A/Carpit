@@ -3,11 +3,13 @@ import EnquireFormName from "./EnquireFormName";
 import EnquireFormEnquiry from "./EnquireFormEnquiry";
 import EnquirySent from "./EnquirySent.jsx";
 import MessageBox from "../../elements/MessageBox.jsx";
+import {useSelector} from "react-redux";
 
 const EnquireForm = () => {
 
     const [state, setState] = useState(0)
     const [details, setDetails] = useState({})
+    const user = useSelector(state => state.user.value)
 
     function advance() {
         setState(state + 1)
@@ -23,7 +25,7 @@ const EnquireForm = () => {
         <>
             <h1 id="enquire-heading">Enquire Now</h1>
             {views[state]}
-            <MessageBox id="enquire-message-box" weight="warning">
+            {user ? '' : <MessageBox id="enquire-message-box" weight="warning">
                 You are not logged in!
                 <br/><br/>
                 Logging in will enable you to chat with our mechanics <br/> securely using the CarPit app and track the
@@ -31,6 +33,7 @@ const EnquireForm = () => {
                 <br/><br/>
                 Without an account, our mechanics will only be able <br/> to contact you via email and/or text
             </MessageBox>
+            }
         </>
     )
 }
