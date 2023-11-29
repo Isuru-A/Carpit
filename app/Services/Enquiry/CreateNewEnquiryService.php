@@ -3,6 +3,7 @@
 namespace App\Services\Enquiry;
 
 use App\Contracts\Repository\EnquiryRepositoryInterface;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Mockery\Exception;
 
@@ -20,7 +21,7 @@ class CreateNewEnquiryService
         $this->repository = $repository;
     }
 
-    public function handle(array $enquiry): void
+    public function handle(Request $request, array $enquiry): void
     {
         /*
          * Validate enquiry data
@@ -42,6 +43,9 @@ class CreateNewEnquiryService
         /*
          * Create new enquiry
          */
-        $this->repository->create($enquiry, true);
+        $this->repository->create([
+            ...$enquiry,
+            'user_uuid' => $request->user() ? $request->user()->uuid : null,
+        ], true);
     }
 }

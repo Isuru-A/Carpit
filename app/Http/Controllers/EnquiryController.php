@@ -40,7 +40,7 @@ class EnquiryController extends Controller
         }
 
         try {
-            $this->createNewEnquiryService->handle($request->all());
+            $this->createNewEnquiryService->handle($request, $request->all());
         } catch (Exception $e) {
             return new JsonResponse([
                 'success' => false,
