@@ -1,5 +1,5 @@
 import {AnimatePresence} from "framer-motion";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import Header from "./Header.jsx";
 import Servicing from "./Services/Servicing.jsx";
 import Services from "./Services/Services.jsx";
@@ -20,8 +20,12 @@ import Login from "./Auth/Login/Login.jsx";
 import AuthOutlet from "./Auth/AuthOutlet.jsx";
 import Register from "./Auth/Register/Register.jsx";
 import Users from "./Admin/Users/Users.jsx";
+import {BrowserView, MobileView} from "react-device-detect";
+import Button from "../elements/Button.jsx";
 
 const Router = () => {
+
+    const navigate = useNavigate()
 
     return (
         <AnimatePresence mode="wait">
@@ -29,7 +33,15 @@ const Router = () => {
                 {/*Dash*/}
                 <Route exact path={'/'} element={<>
                     <Header/>
-                    <Hero/>
+                    <BrowserView><Hero/></BrowserView>
+                    <MobileView>
+                        <div className="mobile-hero">
+                            <h1>No. 1 European car specialists</h1>
+                            <Button id="hero-enquire" onClick={() => {
+                                navigate('/enquire')
+                            }}>Enquire Now</Button>
+                        </div>
+                    </MobileView>
                 </>}/>
 
                 {/*Login*/}

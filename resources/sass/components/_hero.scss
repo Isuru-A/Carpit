@@ -25,3 +25,36 @@
         }
     }
 }
+
+.mobile-hero {
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+    width: 100vw;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $red;
+    flex-direction: column;
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        font-weight: lighter;
+        font-size: 3rem;
+        color: $font-main;
+        line-height: 5rem;
+        text-align: center;
+    }
+    #hero-enquire {
+        color: $splash !important;
+        background-color: $font-main !important;
+        padding: 2rem;
+        margin-top: 5rem;
+        font-size: 2rem;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+}

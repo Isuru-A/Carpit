@@ -3,6 +3,7 @@
     gap: 1rem;
     flex-direction: row;
     width: max-content;
+
     .nav-link {
         font-size: 1rem;
         color: $font-main !important;
@@ -10,6 +11,7 @@
         text-transform: uppercase;
         letter-spacing: .25rem;
     }
+
     #enquire-now {
         padding-left: 5rem;
     }
@@ -20,6 +22,7 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 8vh 4vw;
+
     .nav-link {
         font-size: 1rem;
         color: $font-main !important;
@@ -34,11 +37,19 @@
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 3rem;
+
     a {
         text-decoration: none;
         color: $font-dark;
         font-size: 1.2rem;
         font-weight: lighter;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100vw !important;
+        a {
+            font-size: 2.2rem;
+        }
     }
 }
 
@@ -47,6 +58,7 @@
     flex-direction: row;
     gap: .5rem;
     margin-top: 1rem;
+
     a {
         color: $font-dark;
         text-decoration: none;
@@ -54,5 +66,46 @@
 
     .active {
         color: rgba($font-dark, .5);
+    }
+}
+
+.mobile-navigation-btn {
+    aspect-ratio: 1/1;
+    height: 3rem;
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+    top: 3vh;
+    right: 3vh;
+    z-index: 100;
+
+    &:hover {
+        opacity: .5;
+    }
+}
+
+.mobile-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+    background-color: $font-main;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 15vh;
+        width: 100vw;
+        flex-direction: column;
+
+        a {
+            font-size: 3rem;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            color: $font-dark;
+            font-weight: lighter;
+        }
     }
 }

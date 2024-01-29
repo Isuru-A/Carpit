@@ -24,17 +24,9 @@ function Index() {
     }, [])
     return (
         <div className="app">
-            <BrowserView>
-                <BrowserRouter>
-                    <Router/>
-                </BrowserRouter>
-            </BrowserView>
-            <MobileView>
-                <div className="mobile-block">
-                    <h1>Carpit Automotive is not available on mobile yet</h1>
-                    <span>Please visit on a desktop browser</span>
-                </div>
-            </MobileView>
+            <BrowserRouter>
+                <Router/>
+            </BrowserRouter>
         </div>
     );
 }

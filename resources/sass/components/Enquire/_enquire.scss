@@ -2,6 +2,16 @@
     font-weight: normal;
 }
 
+.enquire-wrapper {
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .enquire {
     width: 25vw;
     overflow-wrap: break-word;
@@ -21,6 +31,19 @@
 
         #enquiry {
             height: 20vh;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        display: flex;
+        width: 100%;
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            width: 70%;
         }
     }
 }
