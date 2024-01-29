@@ -10,13 +10,14 @@
 
         img {
             padding: 3vh 2vw;
-            height: 10rem;
+            height: 5rem;
             z-index: 5;
         }
 
         .content {
             height: max-content;
             padding-left: 3.5vw;
+            padding-top: 15vh; // Remove if putting logo in content
             h1 {
                 font-weight: normal;
                 font-size: 1.5rem;

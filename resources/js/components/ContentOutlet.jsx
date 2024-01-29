@@ -17,7 +17,7 @@ const ContentOutlet = () => {
                         animate={{width: `auto`}}
                         exit={{width: 0}}
             >
-                <motion.img layout src={logo} alt="CARPIT"/>
+                {/*<motion.img layout src={logo} alt="CARPIT"/>*/}
                 <motion.div
                     className="content"
                     layout
