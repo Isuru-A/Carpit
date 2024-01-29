@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\Repository\UserRepositoryInterface;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Str;
@@ -11,6 +12,11 @@ use Throwable;
 
 class UserRepository implements UserRepositoryInterface
 {
+    public function index(): Collection
+    {
+        return User::all();
+    }
+
     /**
      * @throws Throwable
      */

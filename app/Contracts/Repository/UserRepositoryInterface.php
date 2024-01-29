@@ -3,9 +3,17 @@
 namespace App\Contracts\Repository;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 
 interface UserRepositoryInterface
 {
+    /**
+     * Get a collection of all users
+     *
+     * @return Collection
+     */
+    public function index(): Collection;
+
     /**
      * Add new user to database
      *
