@@ -11,17 +11,16 @@ import Detailing from "./Services/Detailing.jsx";
 import Tuning from "./Services/Tuning.jsx";
 import Hero from "./Hero.jsx";
 import Enquire from "./Enquire/Enquire.jsx";
-import AdminOutlet from "./Admin/AdminOutlet.jsx";
 import Enquiries from "./Admin/Enquiries/Enquiries.jsx";
 import EnquiryView from "./Admin/Enquiries/EnquiryView.jsx";
-import FadeInDiv from "../elements/FadeInDiv.jsx";
-import Enquiry from "./Admin/Enquiries/Enquiry.jsx";
 import Login from "./Auth/Login/Login.jsx";
 import AuthOutlet from "./Auth/AuthOutlet.jsx";
 import Register from "./Auth/Register/Register.jsx";
 import Users from "./Admin/Users/Users.jsx";
 import {BrowserView, MobileView} from "react-device-detect";
 import Button from "../elements/Button.jsx";
+import AdminOutlet from "./Admin/AdminOutlet.jsx";
+import MobileBlock from "./MobileBlock.jsx";
 
 const Router = () => {
 
@@ -64,7 +63,10 @@ const Router = () => {
                     <Route path={'/enquire'} element={<Enquire/>}/>
                 </Route>
 
-                <Route path={"/admin"} element={<AdminOutlet/>}>
+                <Route path={"/admin"} element={<>
+                    <BrowserView><AdminOutlet/></BrowserView>
+                    <MobileView><MobileBlock/></MobileView>
+                </>}>
                     {/*Admin*/}
 
                     <Route path={"/admin/enquiries"} element={<Enquiries/>}/>

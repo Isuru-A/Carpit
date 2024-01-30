@@ -25,6 +25,11 @@
                 opacity: .5;
             }
 
+            @media (max-width: 1024px) {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+            }
+
         }
 
         .field-wrapper {
@@ -41,10 +46,20 @@
                 outline: none;
                 padding: 1rem;
                 color: $font-dark;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                    padding: 2rem;
+                    width: calc(100% - 4rem - 2px);
+                }
             }
 
             textarea {
                 resize: none;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
 
             select {
@@ -53,18 +68,31 @@
                 -webkit-appearance: none;
                 appearance: none;
                 cursor: pointer;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                    padding: calc(2rem - .5px) !important;
+                }
             }
 
             .field-label {
                 color: rgba($font-dark, .5);
                 margin-left: 5px;
                 margin-bottom: .25rem;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
 
             .field-error {
                 color: orangered;
                 margin-left: 5px;
                 margin-top: .25rem;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
         }
 
@@ -77,6 +105,10 @@
                 color: rgba($font-dark, .5);
                 margin-left: 5px;
                 margin-bottom: .25rem;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
 
             .digit-input {
@@ -94,6 +126,10 @@
                     color: $font-dark;
                     text-align: center;
                     aspect-ratio: 1 / 1;
+
+                    @media (max-width: 1024px) {
+                        font-size: 2rem;
+                    }
                 }
             }
 
@@ -101,16 +137,28 @@
                 color: orangered;
                 margin-left: 5px;
                 margin-top: .25rem;
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
         }
 
         .has-error {
             .field-label {
                 color: rgba(orangered, .5);
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
 
             .field {
                 border-color: rgba(orangered, .5);
+
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
             }
         }
     }
