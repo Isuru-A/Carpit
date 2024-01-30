@@ -22,7 +22,7 @@ const EnquireForm = () => {
     }
 
     return (
-        <>
+        <div className="enquire-wrapper">
             <h1 id="enquire-heading">Enquire Now</h1>
             {views[state]}
             {user ? '' : <MessageBox id="enquire-message-box" weight="warning">
@@ -34,7 +34,7 @@ const EnquireForm = () => {
                 Without an account, our mechanics will only be able <br/> to contact you via email and/or text
             </MessageBox>
             }
-        </>
+        </div>
     )
 }
 

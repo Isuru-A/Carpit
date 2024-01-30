@@ -2,6 +2,16 @@
     font-weight: normal;
 }
 
+.enquire-wrapper {
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .enquire {
     width: 25vw;
     overflow-wrap: break-word;
@@ -23,14 +33,46 @@
             height: 20vh;
         }
     }
+
+    @media (max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        form {
+            width: 70%;
+        }
+    }
 }
 
 #enquire-message-box {
     width: calc(100% - 3.5vw - 2rem);
     margin-top: 3rem;
+
+    @media (max-width: 1024px) {
+        width: calc(70% - 2rem);
+        font-size: 2rem;
+    }
 }
 
 #invalid-enquiry-message-box {
     margin-top: 3rem;
     width: calc(100% - 3.5vw - 2rem);
+
+    @media (max-width: 1024px) {
+        width: calc(70% - 2rem);
+        font-size: 2rem;
+    }
+}
+
+#enquire-sent {
+    @media (max-width: 1024px) {
+        width: 70%;
+        text-align: center;
+    }
 }

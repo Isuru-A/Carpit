@@ -4,7 +4,7 @@ const EnquirySent = () => {
 
     return (
         <FadeInDiv className="enquire">
-            <p>
+            <p id="enquire-sent">
                 Thank you for your enquiry!
                 <br/><br/>
                 A member of our staff will attempt to contact you via phone within the next 48 hours to further discuss you enquiry and produce a quote
