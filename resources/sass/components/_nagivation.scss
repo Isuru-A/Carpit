@@ -72,16 +72,13 @@
 .mobile-navigation-btn {
     aspect-ratio: 1/1;
     height: 3rem;
-    background-color: white;
+    //background-color: white;
     position: absolute;
     cursor: pointer;
     top: 3vh;
     right: 3vh;
     z-index: 100;
-
-    &:hover {
-        opacity: .5;
-    }
+    scale: 1.5;
 }
 
 .mobile-navigation {

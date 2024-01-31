@@ -47,15 +47,6 @@ const ContentOutlet = () => {
                         className="content-container"
                         layout
                         key={"content-container"}
-                        initial={{
-                            height: 0
-                        }}
-                        animate={{
-                            height: `100vh`
-                        }}
-                        exit={{
-                            height: 0
-                        }}
                     >
                         {/*<motion.img layout src={logo} alt="CARPIT"/>*/}
                         <motion.div

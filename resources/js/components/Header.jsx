@@ -12,18 +12,25 @@ const Header = () => {
     const user = useSelector(state => state.user.value)
 
     return (
-        <div id="header">
-            <img src={logo} alt="CARPIT"/>
-            <MobileView><MobileNavigation/></MobileView>
+        <>
             <BrowserView>
-                <Navigation/>
-                {user ? '' : <InLineButton id="login-button" onClick={() => {
-                    navigate('/auth/login')
-                }}>Login</InLineButton>
-                }
+                <div id="header">
+                    <img src={logo} alt="CARPIT"/>
+                    <Navigation/>
+                    {user ? '' : <InLineButton id="login-button" onClick={() => {
+                        navigate('/auth/login')
+                    }}>Login</InLineButton>
+                    }
+                </div>
             </BrowserView>
+            <MobileView>
+                <div id="header">
+                    <img src={logo} alt="CARPIT"/>
+                    <MobileNavigation/>
+                </div>
+            </MobileView>
+        </>
 
-        </div>
     )
 }
 
